@@ -1,3 +1,2 @@
 script:
-  - git log $TRAVIS_BRANCH..HEAD --graph --oneline --check --boundary
-  - git diff-tree --check $TRAVIS_BRANCH..HEAD    
+  - git log HEAD~6.. --graph --oneline --boundary --check
