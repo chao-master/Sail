@@ -8,7 +8,7 @@ class PollSource extends EventEmitter {
     this.polling = false;
     this.lastMessageId = null;
   }
-
+      
   start(){
     if(!this.polling){
       this.polling = true;
