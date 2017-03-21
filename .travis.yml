@@ -1,3 +1,5 @@
 script:
-  - git log HEAD^.. --oneline --boundary --graph
+  - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
   - git diff HEAD^.. --check
+  - git rev-list HEAD~7.. -1 --merges --count
+  - fi
