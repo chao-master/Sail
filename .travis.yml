@@ -1,2 +1,3 @@
 script:
-  - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then .travis/pr-git-house-keeping.sh; fi
+  - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then git diff HEAD^.. --check; fi
+  - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then [ $(git rev-list HEAD^1..HEAD^2 -1 --merges --count) -eq 0 ]; fi
